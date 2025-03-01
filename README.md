@@ -1,38 +1,47 @@
-# software_design
-# 📌 Patrones de Diseño: Factory Method, Strategy, Decorator y Composite
+# 📌 Patrones de Diseño
 
 ## 📖 Descripción
-Este repositorio contiene implementaciones y explicaciones detalladas sobre cuatro patrones de diseño fundamentales en la programación orientada a objetos:
-
-- **Factory Method**: Proporciona una interfaz para crear objetos en una superclase, pero permite a las subclases alterar el tipo de objetos que se crean.
-- **Strategy**: Permite definir una familia de algoritmos, encapsular cada uno de ellos y hacerlos intercambiables.
-- **Decorator**: Permite añadir funcionalidad a objetos de manera dinámica sin modificar su estructura.
-- **Composite**: Permite tratar estructuras de objetos en forma de árbol de manera uniforme.
-
-Cada patrón está implementado con ejemplos prácticos y explicaciones en código para facilitar su comprensión.
+Este repositorio contiene implementaciones y explicaciones detalladas sobre cuatro patrones de diseño fundamentales en la programación orientada a objetos.
 
 ---
 
-## 📂 Estructura del Repositorio
-```
-📦 design-patterns
- ┣ 📂 factory-method
- ┃ ┣ 📜 FactoryMethodExample.ext
- ┃ ┗ 📜 README.md
- ┣ 📂 strategy
- ┃ ┣ 📜 StrategyExample.ext
- ┃ ┗ 📜 README.md
- ┣ 📂 decorator
- ┃ ┣ 📜 DecoratorExample.ext
- ┃ ┗ 📜 README.md
- ┣ 📂 composite
- ┃ ┣ 📜 CompositeExample.ext
- ┃ ┗ 📜 README.md
- ┗ 📜 README.md
-```
-Cada carpeta contiene:
-- **Ejemplo de implementación** del patrón en un lenguaje de programación específico.
-- **README** con una descripción teórica y su aplicación práctica.
+## 🔹 Factory Method
+### 📌 Propósito
+El patrón Factory Method define una interfaz para la creación de objetos, pero permite que las subclases alteren el tipo de objetos que se crean.
+
+### 📌 Cuándo Usarlo
+- Cuando una clase no puede anticipar el tipo exacto de objetos que debe crear.
+- Cuando delegar la creación a subclases permite un mejor diseño y flexibilidad.
+
+---
+
+## 🔹 Strategy
+### 📌 Propósito
+Permite definir una familia de algoritmos, encapsular cada uno de ellos y hacerlos intercambiables sin alterar el código cliente.
+
+### 📌 Cuándo Usarlo
+- Cuando se tienen múltiples maneras de realizar una operación.
+- Para evitar múltiples condicionales dentro de una misma clase.
+
+---
+
+## 🔹 Decorator
+### 📌 Propósito
+Permite agregar funcionalidades adicionales a objetos de manera dinámica sin modificar su estructura original.
+
+### 📌 Cuándo Usarlo
+- Cuando se necesita extender funcionalidad sin modificar la clase original.
+- Cuando se quiere evitar una jerarquía de herencia demasiado compleja.
+  
+---
+
+## 🔹 Composite
+### 📌 Propósito
+Permite tratar objetos individuales y estructuras de objetos de manera uniforme dentro de una jerarquía en forma de árbol.
+
+### 📌 Cuándo Usarlo
+- Cuando se necesita representar una jerarquía de objetos de forma uniforme.
+- Cuando se quiere tratar objetos individuales y compuestos de la misma manera.
 
 ---
 
