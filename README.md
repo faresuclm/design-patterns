@@ -1,9 +1,7 @@
 # 📌 Patrones de Diseño
 
 ## 📖 Descripción
-Este repositorio contiene implementaciones y explicaciones detalladas sobre cuatro patrones de diseño fundamentales en la programación orientada a objetos.
-
----
+Este repositorio contiene implementaciones y explicaciones detalladas sobre patrones de diseño fundamentales en la programación orientada a objetos.
 
 ## 🔹 Factory Method
 ### 📌 Propósito
@@ -23,6 +21,7 @@ Permite definir una familia de algoritmos, encapsular cada uno de ellos y hacerl
 - Cuando se tienen múltiples maneras de realizar una operación.
 - Para evitar múltiples condicionales dentro de una misma clase.
 
+
 ---
 
 ## 🔹 Decorator
@@ -32,7 +31,8 @@ Permite agregar funcionalidades adicionales a objetos de manera dinámica sin mo
 ### 📌 Cuándo Usarlo
 - Cuando se necesita extender funcionalidad sin modificar la clase original.
 - Cuando se quiere evitar una jerarquía de herencia demasiado compleja.
-  
+
+
 ---
 
 ## 🔹 Composite
@@ -43,6 +43,7 @@ Permite tratar objetos individuales y estructuras de objetos de manera uniforme 
 - Cuando se necesita representar una jerarquía de objetos de forma uniforme.
 - Cuando se quiere tratar objetos individuales y compuestos de la misma manera.
 
+
 ---
 
 ## 🚀 Instalación y Uso
@@ -52,6 +53,7 @@ Permite tratar objetos individuales y estructuras de objetos de manera uniforme 
    ```
 2. Explora los ejemplos dentro de cada patrón.
 3. Ejecuta los ejemplos en tu entorno preferido.
+
 
 ---
 
