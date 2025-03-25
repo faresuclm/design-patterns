@@ -52,7 +52,7 @@ El patrón Composite permite tratar objetos individuales y estructuras de objeto
 ## 🚀 Instalación y Uso
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tuusuario/design-patterns.git
+   git clone https://github.com/faresuclm/design-patterns.git
    ```
 2. Explora los ejemplos dentro de cada patrón.
 3. Ejecuta los ejemplos en tu entorno preferido.
