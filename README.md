@@ -14,6 +14,13 @@ El patrón Factory Method define una interfaz para la creación de objetos, pero
 - Cuando se desea delegar la creación de objetos a subclases para lograr un diseño más flexible.
 - Para simplificar la creación de objetos y evitar la dependencia directa de clases concretas.
 
+### Estructura
+![Factory Method](factory-method.png)
+
+### Ejemplo
+En nuestro ejemplo nos valemos de un ***creator*** de elementos del mapa y dos ***creator*** concretos, ***CreatorB*** para bombas y ***CreatorBlind*** para blindaje.
+![Ejemplo](factory-method-ex.png)
+
 ---
 
 ## 🔹 Strategy
@@ -24,6 +31,13 @@ El patrón Strategy permite definir una familia de algoritmos, encapsular cada u
 - Cuando se tienen múltiples maneras de realizar una operación y se quiere cambiar la implementación en tiempo de ejecución.
 - Para evitar múltiples condicionales dentro de una misma clase.
 - Cuando se desea encapsular la lógica de diferentes estrategias de manera independiente.
+
+### Estructura
+![](strategy.png)
+
+### Ejemplo
+En el ejemplo se ha implementado para el strategy diferentes tipos de bomba siguiendo la propuesta hecha por el profesor.
+![](strategy-ex.png)
 
 ---
 
@@ -36,6 +50,13 @@ El patrón Decorator permite agregar funcionalidades adicionales a objetos de ma
 - Para evitar una jerarquía de herencia demasiado compleja.
 - Cuando se desea añadir comportamientos en tiempo de ejecución de manera flexible.
 
+### Estructura
+![](decorator.png)
+
+### Ejemplo
+En nuestro ejemplo decoramos los elementos del mapa con bomba y blindaje
+![](decorator-ex.png)
+
 ---
 
 ## 🔹 Composite
@@ -47,7 +68,37 @@ El patrón Composite permite tratar objetos individuales y estructuras de objeto
 - Cuando se quiere tratar objetos individuales y compuestos de la misma manera.
 - Para estructurar elementos en árboles de composición sin afectar su manipulación.
 
+### Estructura
+![](composite.png)
+
+### Ejemplo
+En nuestro caso hemos tenemos una clase contenedor del que los elementos mapa que puedan contener a otros pueden heredar, como habitación. También hemos creado el tipo ***ArmarioEmpotrado*** siguiendo la propuesta del profesor. Aquí tenemos ***ElementoMapa(Component)***, ***Composite(Contenedor, Habitación, ArmarioEmpotrado)*** y ***Leaf(Pared, Puerta, etc)***
+
+![](composite-ex.png)
 ---
+
+
+## 🔹 Iterator, Template y Singleton
+### 📌 Propósito
+- **Iterator**: Proporcionar una forma de acceder secuencialmente a los elementos de un objeto agregado (como una lista, un conjunto, un árbol, etc.) sin exponer su representación interna.
+
+- **Singleton**: Asegurar que una clase tenga una única instancia y proporcionar un punto de acceso global a ella.
+
+- **Template Method**: Definir el esqueleto de un algoritmo en una operación, dejando que las subclases definan
+algunos de los pasos.
+
+### 📌 Cuándo Usarlo
+- **Iterator**: Cuando hay que acceder al contenido de una colección y soportar múltiples formas de recorrerlo.
+
+- **Singleton**: Cuando debe haber exactamente una instancia de una clase y debe ser accesible a los clientes.
+
+- **Template Method**: Cuanod hay que implementar las partes invariantes de un algoritmo una sola vez y dejar que las
+subclases redefinan el comportamiento que puede variar-
+
+### Ejemplo
+- **Iterator**: En nuestro caso se puede ver en la implementación de la operación *recorrer(unBloque)*
+
+- **Singleton**: En nuestro caso lo aplicamos en los objetos Orientación.
 
 ## 🚀 Instalación y Uso
 1. Clona este repositorio:

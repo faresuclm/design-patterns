@@ -1,4 +1,5 @@
 from abc import abstractmethod, ABC
+from decorator import Decorator
 
 ### BOMBAS ########
 class Bomba(Decorator):

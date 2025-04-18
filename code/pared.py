@@ -3,6 +3,7 @@ from elements import ElementoMapa
 class Pared(ElementoMapa):
     def __init__(self):
         super().__init__()
+        self.longitud = 0
 
     def entrar(self):
         print("Entrando en una pared")

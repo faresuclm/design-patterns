@@ -5,6 +5,7 @@ class Puerta(ElementoMapa):
         self.abierta = False
         self.lado1 = lado1
         self.lado2 = lado2
+        self.longitud = 0
 
     def entrar(self):
         print("Entrando en una puerta")
