@@ -6,6 +6,8 @@ class Modo:
         self.dormir(bicho)
         self.caminar(bicho)
         self.atacar(bicho)
+        self.sanar(bicho)
+        self.autodestruir(bicho)
 
     def dormir(self, bicho):
         pass
@@ -14,4 +16,10 @@ class Modo:
         pass
 
     def atacar(self, bicho):
+        pass
+
+    def sanar(self, bicho):
+        pass
+
+    def autodestruir(self, bicho):
         pass

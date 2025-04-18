@@ -1,4 +1,4 @@
-from elements import ElementoMapa
+from code.elemento_mapa import ElementoMapa
 
 class Pared(ElementoMapa):
     def __init__(self):

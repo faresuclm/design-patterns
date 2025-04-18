@@ -7,6 +7,9 @@ class Habitacion(Contenedor):
         self.num = num
         self.longitud = 0
 
+    def recorrer(self, unBloque: list):
+        super().recorrer_preorden(unBloque)
+
 
     def entrar(self):
         print(f"Entrando en la habitación {self.num}")

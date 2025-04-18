@@ -1,4 +1,4 @@
-from elements import ElementoMapa
+from elemento_mapa import ElementoMapa
 
 class Puerta(ElementoMapa):
     def __init__(self, lado1, lado2):

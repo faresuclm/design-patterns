@@ -1,4 +1,4 @@
-from elements import *
+from code.elemento_mapa import *
 from pared import *
 from puerta import Puerta, PuertaBlindada
 

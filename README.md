@@ -96,9 +96,13 @@ algunos de los pasos.
 subclases redefinan el comportamiento que puede variar-
 
 ### Ejemplo
-- **Iterator**: En nuestro caso se puede ver en la implementación de la operación *recorrer(unBloque)*
+- **Iterator**: En nuestro caso se puede ver en la implementación de la operación *recorrer(unBloque)*, ***recorrerPreorden(), recorrerInorden(), recorrerPostorden(), recorrerBf()*** sugeridas por el profesor.
 
 - **Singleton**: En nuestro caso lo aplicamos en los objetos Orientación.
+
+- **Template Method**: Tenemos el método actúa que es un Template Method que contiene las partes comunes en la actuación de cada bicho y luego deja que cada tipo de bicho implemente las operaciones primitivas de dormir,caminar y atacar.
+
+![](template-method.png)
 
 ## 🚀 Instalación y Uso
 1. Clona este repositorio:
