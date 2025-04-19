@@ -1,4 +1,4 @@
-from code.elemento_mapa import ElementoMapa
+from elemento_mapa import ElementoMapa
 
 class Contenedor(ElementoMapa):
 
@@ -22,10 +22,7 @@ class Contenedor(ElementoMapa):
         self.hijos.remove(hijo)
 
     def cabe_dentro_de(self, otro):
-        pass
-        
-        
-        
+        pass    
 
     
     def agregarOrientacion(self, orientacion):
@@ -34,6 +31,9 @@ class Contenedor(ElementoMapa):
     
     def eliminarOrientacion(self, orientacion):
         self.orientaciones.remove(orientacion)
+
+    def ponerElementoEnOrientacion(self, elemento, orientacion):
+        orientacion.poner(elemento, self)
 
     
     def __str__(self):
