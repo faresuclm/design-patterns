@@ -1,144 +1,146 @@
-# 📌 Patrones de Diseño
+# ⚙️ Patrones de Diseño en Programación Orientada a Objetos
 
-## 📖 Descripción
-Este repositorio contiene implementaciones y explicaciones detalladas sobre patrones de diseño fundamentales en la programación orientada a objetos. Cada patrón incluye una descripción clara de su propósito y cuándo debe utilizarse para facilitar su comprensión.
+[![Licencia MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Pull Requests Bienvenidos](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/faresuclm/design-patterns/pulls)
+[![Última Actualización](https://img.shields.io/github/last-commit/faresuclm/design-patterns)](https://github.com/faresuclm/design-patterns/commits/main)
 
----
+## 📖 Descripción General
 
-## 🔹 Factory Method
-### 📌 Propósito
-El patrón Factory Method define una interfaz para la creación de objetos, pero permite que las subclases alteren el tipo de objetos que se crean. Facilita la encapsulación de la lógica de instanciación y promueve la reutilización del código.
-
-### 📌 Uso
-- Cuando una clase no puede anticipar el tipo exacto de objetos que debe crear.
-- Cuando se desea delegar la creación de objetos a subclases para lograr un diseño más flexible.
-- Para simplificar la creación de objetos y evitar la dependencia directa de clases concretas.
-
-### 📌 Estructura
-![Factory Method](factory-method.png)
-
-### 📌 Ejemplo
-En nuestro ejemplo nos valemos de un ***creator*** de elementos del mapa y dos ***creator*** concretos, ***CreatorB*** para bombas y ***CreatorBlind*** para blindaje.
-![Ejemplo](factory-method-ex.png)
+Este repositorio ofrece una exploración exhaustiva de los patrones de diseño fundamentales en la programación orientada a objetos. Cada patrón se presenta con una descripción concisa de su propósito, directrices claras sobre cuándo aplicarlo y ejemplos prácticos para facilitar una comprensión profunda y su aplicación efectiva.
 
 ---
 
-## 🔹 Strategy
-### 📌 Propósito
-El patrón Strategy permite definir una familia de algoritmos, encapsular cada uno de ellos y hacerlos intercambiables sin alterar el código cliente. Ayuda a separar la lógica de selección de algoritmos del código principal.
+## 💡 Patrones Implementados
 
-### 📌 Uso
-- Cuando se tienen múltiples maneras de realizar una operación y se quiere cambiar la implementación en tiempo de ejecución.
-- Para evitar múltiples condicionales dentro de una misma clase.
-- Cuando se desea encapsular la lógica de diferentes estrategias de manera independiente.
+### 🔹 Factory Method
+**Propósito:** Define una interfaz para crear objetos, delegando la decisión del tipo concreto a las subclases. Esto encapsula la lógica de instanciación y promueve un diseño más flexible y reutilizable.
 
-### 📌 Estructura
-![](strategy.png)
+**Cuándo Utilizar:**
+- Cuando una clase no conoce de antemano el tipo exacto de objetos que necesita crear.
+- Para permitir que las subclases especifiquen los tipos de objetos a crear.
+- Para simplificar la creación de objetos complejos y reducir el acoplamiento a clases concretas.
 
-### 📌 Ejemplo
-En el ejemplo se ha implementado para el strategy diferentes tipos de bomba siguiendo la propuesta hecha por el profesor.
-![](strategy-ex.png)
+**Estructura:**
+![Diagrama de Estructura del Patrón Factory Method](pictures/factory-method.png)
 
----
+**Ejemplo Práctico:**
+En este repositorio, el patrón Factory Method se ilustra mediante la creación dinámica de elementos de un mapa. Se define un `Creator` abstracto para la creación de elementos, con implementaciones concretas como `CreatorB` para generar bombas y `CreatorBlind` para crear blindaje.
 
-## 🔹 Decorator
-### 📌 Propósito
-El patrón Decorator permite agregar funcionalidades adicionales a objetos de manera dinámica sin modificar su estructura original. Es una alternativa flexible a la herencia para extender el comportamiento de los objetos.
-
-### 📌 Uso
-- Cuando se necesita extender funcionalidad sin modificar la clase original.
-- Para evitar una jerarquía de herencia demasiado compleja.
-- Cuando se desea añadir comportamientos en tiempo de ejecución de manera flexible.
-
-### 📌 Estructura
-![](decorator.png)
-
-### 📌 Ejemplo
-En nuestro ejemplo decoramos los elementos del mapa con bomba y blindaje
-![](decorator-ex.png)
+![Ejemplo de Implementación del Patrón Factory Method](pictures/factory-method-ex.png)
 
 ---
 
-## 🔹 Composite
-### 📌 Propósito
-El patrón Composite permite tratar objetos individuales y estructuras de objetos de manera uniforme dentro de una jerarquía en forma de árbol. Facilita la gestión de objetos complejos con estructuras recursivas.
+### 🔹 Strategy
+**Propósito:** Define una familia de algoritmos, los encapsula y los hace intercambiables en tiempo de ejecución. Esto permite variar el comportamiento de un objeto independientemente de su clase.
 
-### 📌 Uso
-- Cuando se necesita representar una jerarquía de objetos de forma uniforme.
-- Cuando se quiere tratar objetos individuales y compuestos de la misma manera.
-- Para estructurar elementos en árboles de composición sin afectar su manipulación.
+**Cuándo Utilizar:**
+- Cuando existen múltiples algoritmos para una tarea y se necesita cambiar entre ellos dinámicamente.
+- Para evitar una gran cantidad de sentencias condicionales (`if-else`) dentro de una clase.
+- Para encapsular algoritmos individuales y hacerlos reutilizables.
 
-### 📌 Estructura
-![](composite.png)
+**Estructura:**
+![Diagrama de Estructura del Patrón Strategy](pictures/strategy.png)
 
-### 📌 Ejemplo
-En nuestro caso hemos tenemos una clase contenedor del que los elementos mapa que puedan contener a otros pueden heredar, como habitación. También hemos creado el tipo ***ArmarioEmpotrado*** siguiendo la propuesta del profesor. Aquí tenemos ***ElementoMapa(Component)***, ***Composite(Contenedor, Habitación, ArmarioEmpotrado)*** y ***Leaf(Pared, Puerta, etc)***
+**Ejemplo Práctico:**
+El patrón Strategy se aplica para implementar diferentes tipos de bombas, cada una con su propio comportamiento específico, siguiendo una propuesta de diseño flexible y extensible.
 
-![](composite-ex.png)
----
-
-
-## 🔹 Iterator, Template y Singleton
-### 📌 Propósito
-- **Iterator**: Proporcionar una forma de acceder secuencialmente a los elementos de un objeto agregado (como una lista, un conjunto, un árbol, etc.) sin exponer su representación interna.
-
-- **Singleton**: Asegurar que una clase tenga una única instancia y proporcionar un punto de acceso global a ella.
-
-- **Template Method**: Definir el esqueleto de un algoritmo en una operación, dejando que las subclases definan
-algunos de los pasos.
-
-### 📌 Uso
-- **Iterator**: Cuando hay que acceder al contenido de una colección y soportar múltiples formas de recorrerlo.
-
-- **Singleton**: Cuando debe haber exactamente una instancia de una clase y debe ser accesible a los clientes.
-
-- **Template Method**: Cuanod hay que implementar las partes invariantes de un algoritmo una sola vez y dejar que las
-subclases redefinan el comportamiento que puede variar-
-
-### 📌 Ejemplo
-- **Iterator**: En nuestro caso se puede ver en la implementación de la operación *recorrer(unBloque)*, ***recorrerPreorden(), recorrerInorden(), recorrerPostorden(), recorrerBf()*** sugeridas por el profesor.
-
-- **Singleton**: En nuestro caso lo aplicamos en los objetos Orientación.
-
-- **Template Method**: Tenemos el método actúa que es un Template Method que contiene las partes comunes en la actuación de cada bicho y luego deja que cada tipo de bicho implemente las operaciones primitivas de dormir,caminar y atacar.
-
-![](template-method.png)
+![Ejemplo de Implementación del Patrón Strategy](pictures/strategy-ex.png)
 
 ---
 
-## 🔹 Builder
-### 📌 Propósito
-Separar la construcción de un objeto complejo de su representación, de modo que el mismo
-proceso de construcción se utiliza para crear diferentes representaciones.
+### 🔹 Decorator
+**Propósito:** Permite añadir responsabilidades a un objeto de forma dinámica, sin necesidad de modificar su estructura. Ofrece una alternativa flexible a la herencia para extender la funcionalidad.
 
-### 📌 Uso
-Cuando el algoritmo para crear un objeto complejo debería ser independiente de las partes
-que lo componen y de la forma en que se ensamblan.
+**Cuándo Utilizar:**
+- Para añadir funcionalidades a objetos individuales de forma dinámica y transparente.
+- Para evitar la creación de una jerarquía de herencia compleja con múltiples subclases.
+- Cuando la adición de comportamientos es opcional o puede variar en tiempo de ejecución.
 
-### 📌 Estructura
-![](builder.png)
+**Estructura:**
+![Diagrama de Estructura del Patrón Decorator](pictures/decorator.png)
 
-### 📌 Ejemplo
-En nuestro caso utilizamos el patrón para crear laberintos a partir de un fichero json, con la clase Director
-procesando el json para crear cada una de las partes del juego.
-![](builder-ex.png)
+**Ejemplo Práctico:**
+En este ejemplo, se utiliza el patrón Decorator para añadir dinámicamente funcionalidades como "bomba" y "blindaje" a los elementos del mapa, extendiendo su comportamiento sin alterar sus clases base.
+
+![Ejemplo de Implementación del Patrón Decorator](pictures/decorator-ex.png)
+
+---
+
+### 🔹 Composite
+**Propósito:** Permite tratar objetos individuales y composiciones de objetos de manera uniforme. Facilita la creación de estructuras de objetos jerárquicas.
+
+**Cuándo Utilizar:**
+- Cuando se necesita representar una jerarquía de objetos parte-todo.
+- Para que los clientes puedan tratar objetos individuales y compuestos de la misma manera.
+- Para simplificar la manipulación de estructuras complejas.
+
+**Estructura:**
+![Diagrama de Estructura del Patrón Composite](pictures/composite.png)
+
+**Ejemplo Práctico:**
+Se ha implementado una jerarquía donde los elementos del mapa pueden ser tanto componentes individuales (`Leaf`, como `Pared`, `Puerta`) como contenedores (`Composite`, como `Habitación`, `ArmarioEmpotrado`). La clase `Contenedor` actúa como base para aquellos elementos que pueden contener otros.
+
+![Ejemplo de Implementación del Patrón Composite](pictures/composite-ex.png)
+
+---
+
+### 🔹 Iterator, Template Method y Singleton
+**Propósito:**
+- **Iterator:** Proporciona una manera secuencial de acceder a los elementos de una colección sin exponer su estructura interna.
+- **Singleton:** Asegura que una clase tenga una única instancia y proporciona un punto de acceso global a ella.
+- **Template Method:** Define el esqueleto de un algoritmo en una operación, permitiendo a las subclases redefinir ciertos pasos sin cambiar la estructura del algoritmo.
+
+**Cuándo Utilizar:**
+- **Iterator:** Cuando se necesita recorrer los elementos de una colección de diversas maneras.
+- **Singleton:** Cuando se requiere una única instancia de una clase para gestionar un recurso compartido o un estado global.
+- **Template Method:** Para implementar los pasos invariables de un algoritmo una vez y permitir la personalización de los pasos variables por las subclases.
+
+**Ejemplo Práctico:**
+- **Iterator:** Se aplica en la implementación de la operación `recorrer(unBloque)`, con métodos específicos para diferentes tipos de recorrido en estructuras de datos complejas (`recorrerPreorden()`, `recorrerInorden()`, `recorrerPostorden()`, `recorrerBf()`).
+- **Singleton:** Se utiliza para gestionar las posibles `Orientación` de los elementos del mapa, asegurando una única instancia para cada orientación.
+- **Template Method:** El método `actúa` define el flujo general de la acción de un "bicho" en el juego, mientras que las subclases de "bicho" implementan los detalles específicos de las acciones primitivas como `dormir`, `caminar` y `atacar`.
+
+![Diagrama de Estructura del Patrón Template Method](pictures/template-method.png)
+
+---
+
+### 🔹 Builder
+**Propósito:** Separa la construcción de un objeto complejo de su representación, permitiendo que el mismo proceso de construcción cree diferentes representaciones.
+
+**Cuándo Utilizar:**
+- Cuando el proceso de construcción de un objeto complejo es independiente de las partes que lo componen y de cómo se ensamblan.
+- Para simplificar la creación de objetos complejos con múltiples configuraciones posibles.
+
+**Estructura:**
+![Diagrama de Estructura del Patrón Builder](pictures/builder.png)
+
+**Ejemplo Práctico:**
+Se utiliza el patrón Builder para la creación de laberintos a partir de la información contenida en un archivo JSON. La clase `Director` orquesta el proceso de construcción, utilizando un `Builder` concreto para crear las diferentes partes del laberinto.
+
+![Ejemplo de Implementación del Patrón Builder](pictures/builder-ex.png)
 
 
-## 🚀 Instalación y Uso
-1. Clona este repositorio:
+### 🔹 State
+**Propósito:** Permite a un objeto alterar su comportamiento cuando cambia su estado interno. El objeto
+parecerá cambiar de clase.
+
+**Cuándo Utilizar:**
+- Cuando el comportamiento de un objeto depende de su estado y debe cambiar en tiempo de ejecución.
+- Cuando tenemos operaciones con muchas sentencias condicionales que dependen del estado del objeto.
+
+**Estructura:**         
+![Diagrama de Estructura del Patrón Builder](pictures/state.png)
+
+**Ejemplo Práctico:**
+Se utiliza el patrón State para que los objetos *Ente* y *Puerta* tengan un comportamiento distinto en función de los estado indicados en el diagrama, por ejempla con la puerta cerrada no se puede entrar y el ente muerto no puede atacar
+
+![Ejemplo de Implementación del Patrón Builder](pictures/state-ex.png)
+
+---
+
+## 🛠️ Instalación y Uso
+
+1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/faresuclm/design-patterns.git
-   ```
-2. Explora los ejemplos dentro de cada patrón.
-3. Ejecuta los ejemplos en tu entorno preferido.
-
----
-
-## 📌 Contribuciones
-¡Las contribuciones son bienvenidas! Si deseas agregar mejoras o ejemplos en otros lenguajes, abre un issue o un pull request.
-
----
-
-## 📝 Licencia
-Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
-
+   git clone [https://github.com/faresuclm/design-patterns.git](https://github.com/faresuclm/design-patterns.git)
+   cd design-patterns

@@ -1,16 +1,14 @@
-from laberinto import Laberinto
+from laberinto import *
 from juego import Juego
 from puerta import Puerta
-from orientacion import Norte
-from orientacion import Sur
-from orientacion import Este
-from orientacion import Oeste 
+from orientacion import *
 from habitacion import Habitacion
 from pared import Pared 
 from bicho import Bicho
 from agresivo import Agresivo
 from perezoso import Perezoso
 from sabio import Sabio
+from contenedor import *
 
 class LaberintoBuilder:
     def __init__(self):
@@ -26,6 +24,7 @@ class LaberintoBuilder:
 
     def fabricarHabitacion(self, num):
         hab=Habitacion(num)	
+        hab.forma = self.fabricarForma()
         hab.agregarOrientacion(self.fabricarNorte())
         hab.agregarOrientacion(self.fabricarSur())
         hab.agregarOrientacion(self.fabricarEste())
@@ -105,3 +104,11 @@ class LaberintoBuilder:
         hab=self.laberinto.obtenerHabitacion(posicion)
         hab.entrar(bicho)
         self.juego.agregar_bicho(bicho)
+
+    def fabricarForma(self):
+         forma=Cuadrado()
+         forma.agregarOrientacion(self.fabricarNorte())
+         forma.agregarOrientacion(self.fabricarSur())
+         forma.agregarOrientacion(self.fabricarEste())
+         forma.agregarOrientacion(self.fabricarOeste())
+         return forma

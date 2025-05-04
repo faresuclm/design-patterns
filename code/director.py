@@ -48,7 +48,8 @@ class Director(ABC):
         return self
 
     def iniciarBuilder(self):
-        self.builderLab=LaberintoBuilder()
+        if self.dict['forma']=='cuadrado':
+             self.builder=LaberintoBuilder()
         return self
 
     def fabricarLaberinto(self):
