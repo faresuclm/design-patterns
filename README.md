@@ -136,6 +136,25 @@ Se utiliza el patrón State para que los objetos *Ente* y *Puerta* tengan un com
 
 ![Ejemplo de Implementación del Patrón Builder](pictures/state-ex.png)
 
+### 🔹 Command
+**Propósito:** Encapsula una petición como un objeto, permitiendo parametrizar a los clientes con diferentes
+peticiones y soportar operaciones deshacer.
+
+**Cuándo Utilizar:**
+- Cuando se desea parametrizar objetos con una acción a ejecutar.
+- Cuando se desea especificar, alistar (meter en una cola) y ejecutar peticiones en diferentes
+momentos.
+- Cuando se quiera poder soportar registro de cambios de modo que se pueden volver a aplicar en el caso de que
+el sistema falle.
+
+**Estructura:**         
+![Diagrama de Estructura del Patrón Builder](pictures/command.png)
+
+**Ejemplo Práctico:**
+En nuestro ejemplo tenemos distintos comandos para los elementos del mapa
+
+![Ejemplo de Implementación del Patrón Builder](pictures/state-ex.png)
+
 ---
 
 ## 🛠️ Instalación y Uso
