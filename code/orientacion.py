@@ -1,5 +1,5 @@
-
 from contenedor import Contenedor
+
 
 class Singleton:
     _instance = None
@@ -18,7 +18,7 @@ class Orientacion(Contenedor):
             cls._instance = super().__new__(cls)
         return cls._instance
     
-    def poner(self, contenedor, elemento):
+    def poner(self, elemento, contenedor):
         pass
 
     def obtenerElemento(self, forma):
@@ -38,7 +38,7 @@ class Norte(Orientacion):
         super().__init__()
 
     
-    def poner(self, contenedor, elemento):
+    def poner(self, elemento, contenedor):
         contenedor.norte = elemento
 
     def obtenerElemento(self, forma):

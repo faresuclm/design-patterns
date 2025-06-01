@@ -13,11 +13,11 @@ class Creator:
         habitacion.forma = self.crear_forma()
         pared_norte = self.fabricar_pared()
         habitacion.ponerElementoEnOrientacion(pared_norte, Norte())
-        pared_sur = self.crear_pared()
+        pared_sur = self.fabricar_pared()
         habitacion.ponerElementoEnOrientacion(pared_sur, Sur())
-        pared_este = self.crear_pared()
+        pared_este = self.fabricar_pared()
         habitacion.ponerElementoEnOrientacion(pared_este, Este())
-        pared_oeste = self.crear_pared()
+        pared_oeste = self.fabricar_pared()
         habitacion.ponerElementoEnOrientacion(pared_oeste, Oeste())
         return habitacion
     
@@ -64,6 +64,30 @@ class Creator:
         return bicho
 
 class CreatorB(Creator):
+
+    def crear_habitacion(self, num):
+        pared_oeste = self.crear_bomba(self.fabricar_pared())
+        super().habitacion.ponerElementoEnOrientacion(pared_oeste, Oeste())
+        return super().crear_habitacion(num)
+    
+    def crear_bomba(self, pared):
+        return super().crear_bomba(pared)
+    
+    def crear_forma(self):
+        return super().crear_forma()
+    
+    def fabricarNorte(self):
+        return super().fabricarNorte()
+    
+    def fabricarSur(self):
+        return super().fabricarSur()
+    
+    def fabricarEste(self): 
+        return super().fabricarEste()
+    
+    def fabricarOeste(self):
+        return super().fabricarOeste()
+    
 
     def fabricar_pared(self)-> ParedBomba:
         return ParedBomba()

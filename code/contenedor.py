@@ -7,7 +7,7 @@ class Contenedor(ElementoMapa):
         self.hijos = list()
         self.orientaciones = list()
         self.longitud = 0
-        self.forma:Forma = None
+        self.forma = None
     
 
     def entrar(self):

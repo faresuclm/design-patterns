@@ -15,7 +15,7 @@ class Juego:
         # Lógica para iniciar el juego
         pass
 
-    def crear_laberinto2_hab_fm(self, creator:Creator):
+    def crear_laberinto2_hab_fm(self, creator):
         laberinto = creator.fabricar_laberinto()
         habitacion1 = creator.crear_habitacion(1)
         habitacion2 = creator.crear_habitacion(2)
@@ -26,7 +26,7 @@ class Juego:
         laberinto.agregar_habitacion(habitacion2)
         return laberinto
 
-    def crear_laberinto_2hab_bomba(self, creator:Creator):
+    def crear_laberinto_2hab_bomba(self, creator):
         laberinto = creator.fabricar_laberinto()
         habitacion1 = creator.crear_habitacion(1)
         habitacion2 = creator.crear_habitacion(2)
