@@ -1,5 +1,5 @@
 from abc import ABC
-from code.elemento_mapa import *
+from elemento_mapa import *
 from creator import *
 
 
